@@ -23,7 +23,7 @@ export default class SignUp extends Component {
 
     handleLogin() {
         console.log('login motherfucker')
-        fetch('http://app.surroundm.com/login', {
+        fetch('/login', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -37,11 +37,11 @@ export default class SignUp extends Component {
         })
             .then((response) => response.json())
             .then((responseJson) => {
+                console.log(responseJson, 'responseJson')
                 if (responseJson.passCheck === 'correct') {
-                    console.log(responseJson.sessid)
-                    this.props.history.push('/landing')
+                    this.props.history.push('/homepage')
                 } else {
-                    console.log(responseJson.passCheck)
+                    console.log(responseJson.passCheck, 'incorrect pass')
                 }
             })
             .catch((error) => {

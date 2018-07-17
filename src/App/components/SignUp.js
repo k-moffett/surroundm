@@ -27,7 +27,7 @@ export default class SignUp extends Component {
     }
 
     handleSignUp() {
-        fetch('http://app.surroundm.com/register', {
+        fetch('/register', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

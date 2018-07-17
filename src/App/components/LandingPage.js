@@ -11,8 +11,8 @@ export default class LandingPage extends Component {
   render() {
     return (
         <Container className="LandingPage">
-            <SignUp />
-            <Login />
+            <SignUp history={this.props.history} />
+            <Login history={this.props.history} />
         </Container>
     );
   }
